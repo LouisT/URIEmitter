@@ -1,7 +1,7 @@
 URIEmitter (v0.0.1)
 ======
 
-Install: npm install [uriemitter](https://npmjs.org/package/insubnet "Title")
+Install: npm install [uriemitter](https://npmjs.org/package/uriemitter "Title")
 
 This project is [Unlicensed](http://unlicense.org/ "Title").
 In other words, I don't care what you do with it.
