@@ -1,0 +1,31 @@
+{
+    "name": "uriemitter",
+    "version": "0.0.1",
+    "homepage": "http://louist.github.io/URIEmitter",
+    "author": {
+        "name": "Louis T.",
+        "email": "louist@ltdev.im",
+        "url": "http://ltdev.im/"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/LouisT/URIEmitter.git"
+    },
+    "bugs": {
+        "url": "https://github.com/LouisT/URIEmitter/issues"
+    },
+    "licenses": [
+        {
+          "type": "unlicensed",
+          "url": "http://unlicense.org/"
+        }
+    ],
+    "keywords": [
+        "URI",
+        "URL",
+        "emitter"
+    ],
+    "description": "Emit URI schemes with callbacks.",
+    "engine": "node => 0.6",
+    "main": "index.js"
+}
