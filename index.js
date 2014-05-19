@@ -15,16 +15,16 @@ util.inherits(URIEmitter,events.EventEmitter);
 
 /*
  Parse a string with RegEx to a possible URI. Returns null or an array.
- uri.parse('<scheme>://<host>[:<port>][/<path>][?<query>][#<anchor>]');
- uri.parse('<scheme>:<path>[?<query>]');
+ uri.parse('<scheme>://<host>[:<port>][/<path>][?<query>][#<fragment>]');
+ uri.parse('<scheme>:<path>[?<query>][#<fragment>]');
 */
 URIEmitter.prototype.parse = function (str) {
          var match = null,
              str = str.trim();
          if ((match = str.match(/^(?:(\w+)[@:])((?!\/\/|\s).[^\s\?]*)(\?[^\s#]*|)?(#.[^\s]*|)?$/i))) {
-            match = {"link":match[0],scheme:match[1],path:match[2],query:match[3],anchor:match[4]};
+            match = {"link":match[0],scheme:match[1],path:match[2],query:match[3],fragment:match[4]};
           } else if ((match = str.match(/^(?:(\w+):\/\/)(?:(.[^\s@]*)@)?(?:([^:\s@\/?#]*)(?::(\d+))?)(\/[^\s\?#]*)?(\?[^\s#]*|)?(#.[^\s]*|)?$/i))) {
-            match = {"link":match[0],scheme:match[1],auth:match[2],host:match[3],port:match[4],path:match[5],query:match[6],anchor:match[7]};
+            match = {"link":match[0],scheme:match[1],auth:match[2],host:match[3],port:match[4],path:match[5],query:match[6],fragment:match[7]};
          };
          if (match) {
             for (var key in match) {
@@ -39,7 +39,7 @@ URIEmitter.prototype.parse = function (str) {
 /*
   Add the same callback for multiple uri schemes.
   uri.multi(<schemes array>,<callback>[,<once>]);
-  uri.multi(['http:','foo:'],function (data) { console.log(data); },true);
+  uri.multi(['http','foo'],function (data) { console.log(data); },true);
 */
 URIEmitter.prototype.multi = function (arr,callback,once) {
          var self = this;

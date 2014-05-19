@@ -1,4 +1,4 @@
-URIEmitter (v0.0.1)
+URIEmitter (v0.0.2)
 ======
 
 Install: npm install [uriemitter](https://npmjs.org/package/uriemitter "Title")
@@ -10,13 +10,15 @@ However, if you make something interesting, I would like to check it out.
 
 Scheme Objects:
 ------
-    Scheme V1: <scheme>://<host>[:<port>][/<path>][?<query>][#<anchor>]
-    Scheme V2: <scheme>:<path>[?<query>][#<anchor>*]
+    NOTE: "anchor" is now "fragment" in the result object.
 
-    Scheme V1 Object: link, scheme, auth, host, port, path, query, anchor
-    Scheme V2 Object: link, scheme, path, query, anchor*
+    Scheme V1: <scheme>://<host>[:<port>][/<path>][?<query>][#<fragment>]
+    Scheme V2: <scheme>:<path>[?<query>][#<fragment>*]
 
-       * Anchor is unlikely, but matches them anyway.
+    Scheme V1 Object: link, scheme, auth, host, port, path, query, fragment
+    Scheme V2 Object: link, scheme, path, query, fragment*
+
+       * Fragment is unlikely, but matches them anyway.
 
 
 Functions:

@@ -35,7 +35,7 @@ uri.on('git',function (data) {
 /*
   A random string to run through `uri.scan()`
 */
-var content = "Example string. http://example.com/about.html?query=test#anchor - minecraft://server.tld:1234/ "+
+var content = "Example string. http://example.com/about.html?query=test#fragment - minecraft://server.tld:1234/ "+
               "Here is another minecraft server I guess.... minecraft://server2.tld/ without a port, this time! "+
               "Foo! Bar? foo://username:password@example.com:8042/over/there/index.dtb?type=animal&name=narwhal#nose "+
               "You can get email as well! mailto:joe@dirt.tld?subject=Topic also spotify spotify:track:4fPBB44eDH71YohayI4eKV "+
